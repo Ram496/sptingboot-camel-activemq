@@ -21,7 +21,7 @@ public class RestConsumer {
 		final String json = org.apache.commons.io.IOUtils.toString(request.getInputStream());
 
 		LOGGER.info("Response recevied from Camel : " + json);
-
+		LOGGER.info("Response recevied from Camel : " + json);
 		return json;
 	}
 
