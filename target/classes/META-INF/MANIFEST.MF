@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: tryout-jms-camel
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: pasam
+Implementation-Vendor-Id: com.fd
+Build-Jdk: 1.8.0_211
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/tryout-jms-camel
+Created-By: Maven Integration for Eclipse
+
