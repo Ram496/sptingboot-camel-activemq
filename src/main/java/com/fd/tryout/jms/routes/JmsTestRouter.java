@@ -2,7 +2,9 @@ package com.fd.tryout.jms.routes;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
+import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
@@ -11,9 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class JmsTestRouter extends RouteBuilder {
 	// private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	@Autowired
+    ProducerTemplate producerTemplate;
 	@Override
 	public void configure() throws Exception {
 
+	    
 		log.info("Configuring route");
 
 		from("{{input.queue}}").log(LoggingLevel.DEBUG, log, "New message received").process(new MyProcessor())
