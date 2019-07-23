@@ -47,7 +47,7 @@ public class JmsRestActiveMQRouterTest {
 	}
 
 	@Test
-	public void fileMoveFromJMS() throws Exception {
+	public void messageTransferFromJMStoRESTApi() throws Exception {
 
 		String inputMessage = "GZXFRTJ675FTRHJJJ87zyxtGovind Real         U000000000000017.450EURATZAT\n"
 				+ ":20:TR234567,Zu87656z,Bhj876t\n" + ":32A:180123 Ship dual FERT chem\n" + ":36:12";
