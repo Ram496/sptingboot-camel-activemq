@@ -1,4 +1,4 @@
-package com.fd.tryout.jms.config;
+package com.springboot.camel.config;
 
 import org.apache.camel.component.jms.JmsComponent;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,8 @@ import javax.jms.ConnectionFactory;
 
 @Configuration
 public class JmsConfig {
-
+	
+	/* JMS configuration */  
 	@Bean
 	public JmsTransactionManager jmsTransactionManager(final ConnectionFactory connectionFactory) {
 		JmsTransactionManager jmsTransactionManager = new JmsTransactionManager();

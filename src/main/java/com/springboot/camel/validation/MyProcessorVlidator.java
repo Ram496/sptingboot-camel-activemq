@@ -1,4 +1,4 @@
-package com.fd.tryout.jms.validation;
+package com.springboot.camel.validation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
