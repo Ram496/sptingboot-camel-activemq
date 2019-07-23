@@ -4,8 +4,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.fd</groupId>
-	<artifactId>tryout-jms-camel</artifactId>
+	<groupId>com.springboot.camel</groupId>
+	<artifactId>springbooot-jms-camel-rest</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
 	<parent>
