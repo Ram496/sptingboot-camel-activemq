@@ -27,8 +27,8 @@ public class JmsRestActiveMQRouter extends RouteBuilder {
 		
 	    .to("{{output.queue}}")
 				.log("LoggingLevel.DEBUG, log, recevied response from REST Api call, response has been sent to the "
-						+ "ActiveMQ out queue - \"{{output.queue}}\"")
-		.end();
+						+ "ActiveMQ out queue - \"{{output.queue}}\"");
+		
 
 	}
 }
