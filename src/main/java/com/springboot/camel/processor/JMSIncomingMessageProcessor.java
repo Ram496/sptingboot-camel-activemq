@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.springboot.camel.model.TransactionMessage;
 import com.springboot.camel.validation.MyProcessorVlidator;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,9 @@ public class JMSIncomingMessageProcessor implements Processor {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	MyProcessorVlidator myProcessorVlidator = new MyProcessorVlidator();
+	
+	TransactionMessage messageBody = new TransactionMessage();
+	
 	/*
 	 * below constants are used to maintain the min and max length of each topic in
 	 * message
@@ -65,6 +69,12 @@ public class JMSIncomingMessageProcessor implements Processor {
 		String service = custom.substring(SERVICE_MIN, SERVICE_MAX).trim();
 		String sourceCountry = custom.substring(SOURCECOUNTRY_MIN, SOURCECOUNTRY_MAX).trim();
 		String message = custom.substring(MESSAGE_MIN, custom.length()).trim();
+		
+		
+		  
+		
+		
+		  
 
 		myProcessorVlidator.setRequestType(requestType);
 		myProcessorVlidator.setTRN(TRN);
@@ -88,13 +98,18 @@ public class JMSIncomingMessageProcessor implements Processor {
 			respnseMessage = "Suspecious shipment" + "," + "AT" + "," + "ATZ" + "," + myProcessorVlidator.getTRN();
 		}
 
-		LOGGER.debug(respnseMessage);
+		LOGGER.debug("Response message: "+respnseMessage);
 
 		/* update the message body with response after processing as per criteria 
 		 * converted message, will be moved to end points 
 		 * */
-		exchange.getOut().setBody(respnseMessage);
-
+		
+		messageBody.setId(exchange.getExchangeId());
+		messageBody.setMessage(respnseMessage);
+		
+		exchange.getOut().setBody(messageBody);
+		
+		LOGGER.debug("exchange data: "+exchange.getOut().getBody());
 	}
 
 }
